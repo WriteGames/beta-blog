@@ -16,6 +16,7 @@
 		color-scheme: dark light;
 		hanging-punctuation: first last;
 		min-height: 100%;
+		position: relative;
 	}
 
 	body {
@@ -67,6 +68,6 @@
 
 @font-face {
 	font-family: 'Outfit-Fallback';
-	/* size-adjust: 98%; */
+	size-adjust: 98.55%;
 	src: local('Arial');
 }
