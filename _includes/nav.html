@@ -1,0 +1,25 @@
+<nav>
+	<div class="bubble">
+		<div class="brand-links">
+			<!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+			{% for item in site.data.brand-links %}
+			<a href="{{ item.link }}" class="icon {{ item.name | downcase }}">
+				{% include svg/{{ item.name | downcase }}.svg %} </a
+			>{% endfor %}
+		</div>
+		<ul>
+			{% for item in site.data.navigation %} {% if item.link %}
+			<li>
+				<a href="{{ item.link }}">{{ item.name }}</a>
+			</li>
+			{% else %}
+			<li class="coming-soon">
+				<a tabindex="0">
+					<span class="reveal">Coming Soon</span>
+					<span class="teaser">???</span>
+				</a>
+			</li>
+			{% endif %} {% endfor %}
+		</ul>
+	</div>
+</nav>

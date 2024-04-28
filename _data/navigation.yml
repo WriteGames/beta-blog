@@ -1,0 +1,8 @@
+- name: Blog
+  link: /
+- name: Tutorials
+  link: /tutorials
+- name: Guides
+- name: Glossary
+- name: About
+  link: /about
