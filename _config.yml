@@ -1,3 +1,16 @@
+name: WriteGames.com
+# timezone: America/Los_Angeles
 sass:
     style: compressed
 permalink: /:title
+
+url: https://writegames.com
+baseurl: /
+
+defaults:
+    - scope:
+          path: ''
+          type: 'posts'
+      values:
+          layout: 'post'
+          author: 'bret'
