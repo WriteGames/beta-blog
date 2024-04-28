@@ -64,6 +64,8 @@ a
 	text-decoration: none
 	font-weight: 550
 	&:is(:hover, :focus)
+		color: var(--link-color)
+	&[href]:is(:hover, :focus)
 		color: var(--link-color-hover)
 		text-decoration: initial
 
@@ -203,13 +205,13 @@ body > main
 	@media (width >= 62.5rem)
 		grid-column: 5 / span 9
 
-.blog-posts
+.blog-posts, .blog-post-wrapper
 	display: flex
 	flex-direction: column
 	gap: var(--padding)
-	--bubble-padding: 2rem
 
 .blog-post
+	--bubble-padding: 2rem
 	display: grid
 	gap: 0.5rem
 

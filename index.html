@@ -4,62 +4,12 @@ siteTitle: WriteGames.com
 ---
 
 <section class="blog-posts">
-	<article class="bubble blog-post">
-		<header>
-			<div class="info">Posted 26 Apr, 2024</div>
-			<h2><a href="#">Making a Platformer in Unity</a></h2>
-			<div class="tags">
-				<a href="#">Platformer</a>
-				<a href="#">Unity</a>
-				<a href="#">C#</a>
-			</div>
-		</header>
-		<div class="body">
-			<a class="button-link" href="#">Direct Link&ensp;🡒</a>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-				tempore nesciunt vitae corrupti, molestias autem, unde explicabo
-				ea aperiam repudiandae alias perspiciatis nisi ab. Facilis harum
-				rem sequi ea voluptate?
-			</p>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-				tempore nesciunt vitae corrupti, molestias autem, unde explicabo
-				ea aperiam repudiandae alias perspiciatis nisi ab. Facilis harum
-				rem sequi ea voluptate?
-			</p>
-			<p><a href="#">Read more</a></p>
-		</div>
-	</article>
-	<article class="bubble blog-post">
-		<header>
-			<div class="info">Posted 26 Apr, 2024</div>
-			<h2><a href="#">Collision Detection with PyGame</a></h2>
-			<div class="tags">
-				<a href="#">Collision</a>
-				<a href="#">Python</a>
-				<a href="#">PyGame</a>
-			</div>
-		</header>
-		<div class="body">
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-				tempore nesciunt vitae corrupti, molestias autem, unde explicabo
-				ea aperiam repudiandae alias perspiciatis nisi ab. Facilis harum
-				rem sequi ea voluptate?
-			</p>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-				tempore nesciunt vitae corrupti, molestias autem, unde explicabo
-				ea aperiam repudiandae alias perspiciatis nisi ab. Facilis harum
-				rem sequi ea voluptate?
-			</p>
-			<p><a href="#">Read more</a></p>
-		</div>
-	</article>
+	{% for post in site.posts %} {% include post.html post=post embed=true %} {%
+	endfor %}
 	<div class="pagination">
 		<a href="#" class="bubble">1</a>
 		<a href="#" class="bubble">2</a>
 		<a href="#" class="bubble">3</a>
 	</div>
+	{{ site.posts['first'] }}
 </section>
