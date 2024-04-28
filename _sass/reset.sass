@@ -1,0 +1,48 @@
+/* Derived from Kevin Powell's CSS reset - https://codepen.io/kevinpowell/pen/abMdOpp */
+@layer reset
+	*
+		&, &::before, &::after
+			box-sizing: border-box
+
+	*
+		margin: 0
+		padding: 0
+		font: inherit
+
+	html
+		color-scheme: dark light
+		hanging-punctuation: first last
+		min-height: 100%
+		position: relative
+
+	body
+		overflow-y: scroll
+		height: 100%
+
+	/* responsive images/videos */
+	img, picture, svg, video
+		display: block
+		max-width: 100%
+
+	/* Improved heading in supported browsers */
+	h1, h2, h3, h4, h5, h6
+		text-wrap: balance
+
+	p,
+	li
+		max-width: var(--p-max-width, 65ch)
+		text-wrap: pretty
+
+/* latin */
+@font-face
+	font-family: 'Outfit'
+	font-style: normal
+	font-weight: 100 900
+	font-display: swap
+	src: url('../fonts/Outfit.woff2') format('woff2')
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+
+@font-face
+	font-family: 'Outfit-Fallback'
+	size-adjust: 98.55%
+	src: local('Arial')
