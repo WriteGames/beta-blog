@@ -102,58 +102,63 @@ a
 
 .bubble
 	border-radius: 0.5rem
-	padding: var(--bubble-padding)
 	background: var(--color-bubble-bg)
 	color: var(--color-bubble-text)
 	box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2)
+	padding: var(--bubble-padding)
+	&.no-padding
+		padding: 0
+	.bubble-padding
+		padding: var(--bubble-padding)
 
-body > nav
-	text-align: center
-	font-size: 1.25rem
-	ul
-		display: flex
-		gap: 0.25rem
-		line-height: 1.26
-		li
-			text-transform: uppercase
-			list-style-type: none
-			a
-				font-weight: 700
-				display: inline-block
-				width: max-content
-				padding: 0.25rem 0.5rem
-	.bubble
-		display: flex
-		flex-direction: column
-		gap: 0.25rem
-
-	@media (width < 62.5rem)
-		grid-column: full
+body
+	> nav
 		text-align: center
+		font-size: 1.25rem
 		ul
-			justify-content: center
+			display: flex
+			gap: 0.25rem
+			line-height: 1.26
+			li
+				text-transform: uppercase
+				list-style-type: none
+				a
+					font-weight: 700
+					display: inline-block
+					width: max-content
+					padding: 0.25rem 0.5rem
 		.bubble
-			--icon-size: 1.5rem
-			--icon-gap: 0.75rem
-			flex-direction: column-reverse
-			gap: 0.75rem
-
-	@media (width < 27rem)
-		grid-column: full
-	@media (27rem <= width < 62.5rem)
-		grid-column: full
-		.bubble
-			padding-inline: 1.5rem
-			width: max-content
-			margin: 0 auto
-	@media (width >= 62.5rem)
-		--bubble-padding: 1.5rem 0
-		position: sticky
-		top: 2rem
-		margin-top: 2rem
-		grid-column: full / span 3
-		ul
+			display: flex
 			flex-direction: column
+			gap: 0.25rem
+
+		@media (width < 62.5rem)
+			grid-column: full
+			text-align: center
+			ul
+				justify-content: center
+			.bubble
+				--icon-size: 1.5rem
+				--icon-gap: 0.75rem
+				flex-direction: column-reverse
+				gap: 0.75rem
+
+		@media (width < 27rem)
+			grid-column: full
+		@media (27rem <= width < 62.5rem)
+			grid-column: full
+			.bubble
+				padding-inline: 1.5rem
+				width: max-content
+				margin: 0 auto
+		@media (width >= 62.5rem)
+			--bubble-padding: 1.5rem 0
+			position: sticky
+			top: 2rem
+			margin-top: 2rem
+			grid-column: full / span 3
+			ul
+				flex-direction: column
 
 .brand-links
 	display: flex
@@ -206,14 +211,16 @@ body > main
 		grid-column: 5 / span 9
 
 .blog-posts, .blog-post-wrapper
-	display: flex
-	flex-direction: column
+	display: grid
 	gap: var(--padding)
 
 .blog-post
 	--bubble-padding: 2rem
-	display: grid
-	gap: 0.5rem
+	overflow: hidden
+
+	.bubble-padding
+		display: grid
+		gap: 0.5rem
 
 	header
 		.info
@@ -235,6 +242,22 @@ body > main
 			line-height: 1
 			--link-color: var(--color-link-hover)
 			--link-color-hover: var(--color-link)
+	.body
+		display: grid
+		gap: 0.5rem
+		font-size: 1.25rem
+		p
+			line-height: 1.65
+	footer
+		margin-top: 1rem
+		.author
+			display: flex
+			align-items: center
+			gap: 0.5rem
+			img
+				border-radius: 50%
+				aspect-ratio: 1
+				width: 2.5rem
 
 .button-link
 	position: relative
@@ -270,13 +293,6 @@ body > main
 			transform: scale(1.1)
 			transition-timing-function: var(--timing-func)
 
-.body
-	display: grid
-	gap: 0.5rem
-	font-size: 1.25rem
-	p
-		line-height: 1.65
-
 .pagination
 	--bubble-padding: 0.25rem
 	display: flex
@@ -289,6 +305,14 @@ body > main
 		place-items: center
 		width: 2rem
 		aspect-ratio: 1
+	.bubble:not(a)
+		cursor: default
+		&:not(.selected)
+			opacity: 0.5
+		&.selected
+			color: var(--color-bubble-bg)
+			background: var(--color-link)
+	.bubble:is(a)
 		&:is(:hover, :focus)
 			color: var(--color-bubble-bg)
 			background: var(--color-link)

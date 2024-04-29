@@ -1,3 +1,11 @@
+plugins:
+    - jekyll-paginate
+
+paginate: 5
+paginate_path: '/blog/:num/'
+
+# safe: true
+
 name: WriteGames.com
 # timezone: America/Los_Angeles
 sass:
@@ -7,10 +15,23 @@ permalink: /:title
 url: https://writegames.com
 baseurl: /
 
+collections:
+    author:
+        output: true
+
 defaults:
+    - scope:
+          path: ''
+          type: 'author'
+      values:
+          layout: 'author'
     - scope:
           path: ''
           type: 'posts'
       values:
           layout: 'post'
-          author: 'bret'
+          author: 'bret-hudson'
+    - scope:
+          path: ''
+      values:
+          layout: 'default'

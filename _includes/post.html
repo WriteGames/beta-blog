@@ -1,25 +1,42 @@
 {% assign post = include.post %} {% unless include.post %} {% assign post = page
 %} {% endunless %}
 
-<article class="bubble blog-post">
-	<header>
-		<div class="info">Posted {{ post.date | date_to_string }}</div>
-		<h2>
-			<a {% if include.embed %} href="{{ post.url }}" {% endif %}
-				>{{ post.title }}</a
-			>
-		</h2>
-		<div class="tags">
-			<a href="#">Platformer</a>
-			<a href="#">Unity</a>
-			<a href="#">C#</a>
+<article class="bubble blog-post no-padding">
+	{% if post.banner %}<a href="{{ post.url }}"
+		><img src="/img/post/first-2/banner.png" /></a
+	>{% endif %}
+	<div class="bubble-padding">
+		<header>
+			<div class="info">Posted {{ post.date | date_to_string }}</div>
+			<h2>
+				<a {% if include.embed %} href="{{ post.url }}" {% endif %}
+					>{{ post.title }}</a
+				>
+			</h2>
+			{% if post.tags.size > 0 %}
+			<div class="tags">
+				{% for tag in post.tags %}<a href="/tag/{{ tag | slugify }}"
+					>{{ tag }}</a
+				>{% endfor %}
+			</div>
+			{% endif %}
+		</header>
+		<div class="body">
+			{% if post.link %}
+			<a class="button-link" href="{{ post.link }}">Direct Link&ensp;🡒</a>
+			{% endif %} {% if include.embed %} {{ post.excerpt }}
+			<p><a href="{{ post.url }}">Read More</a></p>
+			{% else %} {{ content }} {% endif %}
 		</div>
-	</header>
-	<div class="body">
-		{% if post.link %}
-		<a class="button-link" href="{{ post.link }}">Direct Link&ensp;🡒</a>
-		{% endif %} {% if include.embed %} {{ post.excerpt }}
-		<p><a href="{{ post.url }}">Read More</a></p>
-		{% else %} {{ content }} {% endif %}
+		<footer>
+			<div class="author">
+				{% assign author = site.author | where: 'short_name',
+				post.author | first %} {% if author %}<a href="{{ author.url }}"
+					><img src="/img{{ author.url }}.png"
+				/></a>
+				<a href="{{ author.url }}">{{ author.name }}</a>
+				{% endif %}
+			</div>
+		</footer>
 	</div>
 </article>
