@@ -18,6 +18,8 @@ baseurl: /
 collections:
     author:
         output: true
+    history:
+        output: true
 
 defaults:
     - scope:
@@ -25,6 +27,11 @@ defaults:
           type: 'author'
       values:
           layout: 'author'
+    - scope:
+          path: ''
+          type: 'history'
+      values:
+          layout: 'history'
     - scope:
           path: ''
           type: 'posts'
