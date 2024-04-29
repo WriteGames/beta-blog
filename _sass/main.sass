@@ -1,7 +1,8 @@
 @use "sass:selector"
 
 @mixin unify-parent($child)
-	@at-root #{selector.unify(&, $child)}
+	$newSelector: selector.unify(&, $child)
+	@at-root #{$newSelector}
 		@content
 
 body
