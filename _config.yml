@@ -12,13 +12,11 @@ sass:
     style: compressed
 permalink: /:title
 
-domain: writegames.github.io
-url: https://writegames.github.io
-baseurl: /beta-blog/
-
+domain: beta.write.games
 # domain: writegames.com
+url: https://beta.write.games
 # url: https://writegames.com
-# baseurl: /
+baseurl: /
 
 collections:
     author:
