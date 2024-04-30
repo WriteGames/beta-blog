@@ -1,8 +1,9 @@
+{% capture cur_year %}{{ site.time | date: '%Y' }}{% endcapture %}
 <footer>
 	<div class="bubble">
 		<span
-			>&copy; 2024<!--&thinsp;&ndash;&thinsp;2024-->
-			WriteGames.com</span
+			>&copy; {% unless cur_year == '2024' %}2024&thinsp;&ndash;&thinsp;{%
+			endunless %}{{ cur_year }} WriteGames.com</span
 		><span class="delimiter hide">&ensp;&bull;&ensp;</span
 		><span>All Rights Reserved</span
 		><span class="delimiter">&ensp;&bull;&ensp;</span
