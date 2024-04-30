@@ -1,5 +1,9 @@
 {% assign post = include.post %} {% unless include.post %} {% assign post = page
-%} {% endunless %}
+%} {% endunless %} {% capture button %}{% if post.link %}<a
+	class="button-link"
+	href="{{ post.link }}"
+	>Direct Link&ensp;🡒</a
+>{% endif %}{% endcapture %}
 
 <article class="bubble blog-post no-padding">
 	{% if post.banner %}<a href="{{ post.url }}"
@@ -22,11 +26,9 @@
 			{% endif %}
 		</header>
 		<div class="body">
-			{% if post.link %}
-			<a class="button-link" href="{{ post.link }}">Direct Link&ensp;🡒</a>
-			{% endif %} {% if include.embed %} {{ post.excerpt }}
+			{% if include.embed %} {{ button }} {{ post.excerpt }}
 			<p><a href="{{ post.url }}">Read More</a></p>
-			{% else %} {{ content }} {% endif %}
+			{% else %} {{ content }} {{ button }} {% endif %}
 		</div>
 		<footer>
 			<div class="author">
