@@ -2,13 +2,25 @@
 %} {% endunless %} {% capture button %}{% if post.link %}<a
 	class="button-link"
 	href="{{ post.link }}"
-	>Direct Link&ensp;🡒</a
+	>{% if post.video %}Watch on YouTube{% else %}Direct Link{% endif
+	%}&ensp;🡒</a
 >{% endif %}{% endcapture %}
 
 <article class="bubble blog-post no-padding">
 	{% if post.banner %}<a href="{{ post.url }}"
 		><img src="/img/post/first-2/banner.png" /></a
-	>{% endif %}
+	>{% endif %} {% if post.video %}
+	<iframe
+		width="100%"
+		style="aspect-ratio: 16 / 9"
+		src="{{ post.video }}"
+		title="YouTube video player"
+		frameborder="0"
+		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+		referrerpolicy="strict-origin-when-cross-origin"
+		allowfullscreen
+	></iframe>
+	{% endif %}
 	<div class="bubble-padding">
 		<header>
 			<div class="info">Posted {{ post.date | date_to_string }}</div>
