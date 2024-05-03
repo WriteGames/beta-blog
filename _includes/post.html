@@ -8,7 +8,7 @@
 
 <article class="bubble blog-post no-padding">
 	{% if post.banner %}<a href="{{ post.url }}"
-		><img src="/img/post/first-2/banner.png" /></a
+		><img src="/img/post/{{ post.slug }}/{{ post.banner }}" /></a
 	>{% endif %} {% if post.video %}
 	<iframe
 		width="100%"
