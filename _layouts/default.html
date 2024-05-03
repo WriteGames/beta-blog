@@ -1,21 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<title>{{ site.title }}</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="color-scheme" content="dark light" />
-		<link
-			rel="preload"
-			href="/fonts/Outfit.woff2"
-			as="font"
-			type="font/woff2"
-			crossorigin
-			onload="document.body.classList.add('font-loaded')"
-		/>
-		<link rel="stylesheet" href="/css/styles.css?q=0_1" />
-		<link href="/favicon.ico" rel="icon shortcut" type="image/x-icon" />
-		<meta name="theme-color" content="#2d2b4b" />
+		{% include head.html %}
 	</head>
 	<body class="three-column-layout no-js">
 		<script>

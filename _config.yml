@@ -9,6 +9,7 @@ excerpt_separator: <!--more-->
 # safe: true
 
 title: WriteGames.com
+description: Learn about game development through articles, interviews, and interactive tutorials.
 # timezone: America/Los_Angeles
 sass:
     style: compressed

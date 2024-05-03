@@ -1,0 +1,65 @@
+<!-- prettier-ignore -->
+{% assign title = site.title %}
+{% if page.title-only %}
+	{% capture title %}{{ page.title }}{% endcapture %}
+{% elsif page.title %}
+	{% capture title %}{{ page.title }} | {{ site.title }}{% endcapture %}
+{% elsif paginator.page > 1 %}
+	{% capture title %}{{ site.title }} | Page {{ paginator.page }}{% endcapture %}
+{% endif %}
+{% assign description = site.description %}
+{% assign double_space = " " | append: " " %}
+{% if page.excerpt %}
+	{% assign description = page.excerpt | strip_html | newline_to_br | split: "<br />"
+| join: " " | strip_newlines | replace: double_space, " " | strip %} {% endif %}
+<!-- prettier-ignore -->
+{% assign image = 'img/og.png' %}
+{% if page.banner %}
+	{% capture image %}/img/post/{{ page.slug }}/{{ page.banner }}{% endcapture %}
+{% endif %}
+
+<meta charset="UTF-8" />
+<title>{{ title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark light" />
+<meta name="theme-color" content="#2d2b4b" />
+<link
+	rel="preload"
+	href="/fonts/Outfit.woff2"
+	as="font"
+	type="font/woff2"
+	crossorigin
+	onload="document.body.classList.add('font-loaded')"
+/>
+<link rel="stylesheet" href="/css/styles.css?q=0_1" />
+<link href="/favicon.ico" rel="icon shortcut" type="image/x-icon" />
+
+<meta name="description" content="{{ description }}" />
+<meta name="robots" content="follow, index" />
+
+<link rel="canonical" href="{{ page.url | absolute_url }}" />
+{% if paginator.previous_page -%}
+<link rel="prev" href="{{ paginator.previous_page_path | absolute_url }}" />
+{% endif -%} {% if paginator.next_page -%}
+<link rel="next" href="{{ paginator.next_page_path | absolute_url }}" />
+{% endif -%}
+<meta property="og:locale" content="en_US" />
+{% if page.url == '/' -%}
+<meta property="og:type" content="website" />
+{% else -%}
+<meta property="og:type" content="article" />
+{% endif -%}
+<meta property="og:site_name" content="WriteGames.com" />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:url" content="{{ page.url | absolute_url }}" />
+<meta property="og:image" content="{{ image | absolute_url }}" />
+<meta property="og:image:secure_url" content="{{ image | absolute_url }}" />
+{% if image == 'img/og.png' -%}
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
+{% endif %}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@WriteGames" />
+<meta name="twitter:creator" content="@WriteGames" />
