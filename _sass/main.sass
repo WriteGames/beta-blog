@@ -260,25 +260,27 @@ section
 		gap: 0.5rem
 
 	header
-		.info
+		.tags
+			text-transform: uppercase
+			padding-block: 0.5em 0 0
+			display: flex
+			gap: 1ch
 			font-size: 0.75rem
-			line-height: 1em
-			font-weight: 300
-			margin-bottom: 0.25rem
+			line-height: 1
+			--link-color: var(--color-link-hover)
+			--link-color-hover: var(--color-link)
+			a
+				font-weight: 700
 		:is(h1, h2)
 			margin-left: -0.075ch
 			font-weight: 700
 			font-size: 2rem
 			line-height: 1.25
-		.tags
-			text-transform: uppercase
-			padding-block: 0.5em
-			display: flex
-			gap: 1ch
-			font-size: 0.875rem
-			line-height: 1
-			--link-color: var(--color-link-hover)
-			--link-color-hover: var(--color-link)
+		.info
+			margin-top: 0.25rem
+			font-size: 0.75rem
+			line-height: 1em
+			font-weight: 300
 	.body
 		display: grid
 		gap: 0.5rem

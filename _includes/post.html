@@ -23,14 +23,6 @@
 	{% endif %}
 	<div class="bubble-padding">
 		<header>
-			<div class="info">
-				Posted {{ post.date | date: site.date_format }}
-			</div>
-			<h2>
-				<a {% if include.embed %} href="{{ post.url }}" {% endif %}
-					>{{ post.title }}</a
-				>
-			</h2>
 			{% if post.tags.size > 0 %}
 			<div class="tags">
 				{% for tag in post.tags %}<a href="/tag/{{ tag | slugify }}"
@@ -38,6 +30,14 @@
 				>{% endfor %}
 			</div>
 			{% endif %}
+			<h2>
+				<a {% if include.embed %} href="{{ post.url }}" {% endif %}
+					>{{ post.title }}</a
+				>
+			</h2>
+			<div class="info">
+				Posted {{ post.date | date: site.date_format }}
+			</div>
 		</header>
 		<div class="body">
 			{% if include.embed %} {{ button }} {{ post.excerpt }}
