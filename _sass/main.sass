@@ -163,10 +163,15 @@ body
 			position: sticky
 			align-self: start // this is needed for position: sticky to work properly in grid
 			top: 1.5rem
-			margin-top: 6.4rem
+			margin-top: var(--margin, 2rem)
 			grid-column: full / span 3
 			ul
 				flex-direction: column
+
+body
+	&:has(main > :first-child > :first-child:is(h1, h2, .header)) > nav
+		@media (width >= 62.5rem)
+			--margin: 6.4rem
 
 .brand-links
 	display: flex
