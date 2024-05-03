@@ -28,6 +28,8 @@ collections:
         output: true
     history:
         output: true
+    tag:
+        output: true
 
 defaults:
     - scope:

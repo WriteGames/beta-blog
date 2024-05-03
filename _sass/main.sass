@@ -210,9 +210,10 @@ body
 		+ .coming-soon
 			display: none
 	@media (width >= 62.5rem)
-		/* allow hover reveal when flex-direction is column */
-		--reveal: initial
-		--teaser: none
+		a:is(:hover, :focus)
+			/* allow hover reveal when flex-direction is column */
+			--reveal: initial
+			--teaser: none
 
 body > main
 	@media (width < 62.5rem)
