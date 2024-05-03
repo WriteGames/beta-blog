@@ -23,7 +23,9 @@
 	{% endif %}
 	<div class="bubble-padding">
 		<header>
-			<div class="info">Posted {{ post.date | date_to_string }}</div>
+			<div class="info">
+				Posted {{ post.date | date: site.date_format }}
+			</div>
 			<h2>
 				<a {% if include.embed %} href="{{ post.url }}" {% endif %}
 					>{{ post.title }}</a
