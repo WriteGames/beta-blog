@@ -36,8 +36,14 @@ body
 	--color-link-hover: #a09ffc
 	--color-title: white
 
-	--color-bubble-bg: #f6f3ff
-	--color-bubble-text: #333240
+	--color-bubble-bg-light: #f6f3ff
+	--color-bubble-bg-dark: var(--color-secondary)
+
+	--color-bubble-text-light: #333240
+	--color-bubble-text-dark: #e5e0f3
+
+	--color-bubble-bg: var(--color-bubble-bg-light)
+	--color-bubble-text: var(--color-bubble-text-light)
 
 	/* can be overridden */
 	--link-color: var(--color-link)
@@ -51,8 +57,8 @@ body
 	@media (prefers-color-scheme: dark)
 		--color-link: white
 		--color-link-hover: #a09ffc
-		--color-bubble-bg: var(--color-secondary)
-		--color-bubble-text: #e5e0f3
+		--color-bubble-bg: var(--color-bubble-bg-dark)
+		--color-bubble-text: var(--color-bubble-text-dark)
 
 body
 	> header
@@ -212,21 +218,33 @@ body > main
 	@media (width >= 62.5rem)
 		grid-column: 5 / span 9
 
-section + section
+section
+	> :is(h1, h2, .header)
+		position: relative
+		margin-left: auto
+		// padding-left: 2rem
+		font-size: 1.5rem
+		text-transform: uppercase
+		font-weight: 750
+		letter-spacing: 0.04em
+		word-spacing: 0.1em
+		flex-wrap: wrap
+		color: var(--color-bubble-text)
+		border-radius: 0.5rem
+		width: fit-content
+		background: var(--color-bubble-bg-dark)
+		color: var(--color-bubble-text-dark)
+		padding: 0.875rem 1.25rem
+		box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2)
+		@media (prefers-color-scheme: dark)
+			background: var(--color-bubble-bg-light)
+			color: var(--color-bubble-text-light)
+	+ section
 		margin-top: 1rem
 
 .blog-posts, .blog-post-wrapper
 	display: grid
 	gap: var(--padding)
-	h1
-		font-size: 1.5rem
-		text-transform: uppercase
-		font-weight: 900
-		letter-spacing: 0.04em
-		word-spacing: 0.1em
-		text-align: center
-		color: var(--color-secondary)
-		padding: 1rem 3rem
 
 .blog-post
 	--bubble-padding: 2rem
@@ -330,6 +348,22 @@ section + section
 		&:is(:hover, :focus)
 			color: var(--color-bubble-bg)
 			background: var(--color-link)
+
+.author-bio
+	display: grid
+	grid-template-columns: auto 1fr
+	gap: 0 1rem
+	align-items: center
+	img
+		border-radius: 50%
+	.body
+		display: grid
+		gap: 0.25rem
+		h1
+			font-weight: 700
+			font-size: 2rem
+			+ p
+				font-weight: 550
 
 .history
 	ul

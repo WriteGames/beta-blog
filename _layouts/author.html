@@ -3,17 +3,18 @@ layout: default
 ---
 
 <section>
-	<div class="bubble">
-		<h1>{{ page.name }}</h1>
-		<h2>{{ page.position }}</h2>
+	<div class="bubble author-bio">
+		<img src="/img{{ page.url }}.png" />
+		<div class="body">
+			<h1>{{ page.name }}</h1>
+			<p>{{ page.position }}</p>
 
-		{{ content }}
-
-		<h2>Posts</h2>
+			{{ content }}
+		</div>
 	</div>
 </section>
 <section class="blog-posts">
-	<h1>Posts by {{ page.name }}</h1>
+	<div class="header">Posts by {{ page.name }}</div>
 	{% assign filtered_posts = site.posts | where: 'author', page.short_name %}
 	{% for post in filtered_posts %} {% include post.html post=post embed=true
 	%} {% endfor %}

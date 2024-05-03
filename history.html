@@ -2,13 +2,16 @@
 layout: default
 ---
 
-<section class="history bubble">
-	<ul>
-		{% for history in site.history reversed %}
-		<li class="item">
-			<h2><a href="{{ history.url }}">{{ history.name }}</a></h2>
-			<p>{{ history.content }}</p>
-		</li>
-		{% endfor %}
-	</ul>
+<section class="history">
+	<h1>History</h1>
+	<div class="bubble">
+		<ul>
+			{% for history in site.history reversed %}
+			<li class="item">
+				<h2><a href="{{ history.url }}">{{ history.name }}</a></h2>
+				<p>{{ history.content }}</p>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
 </section>
