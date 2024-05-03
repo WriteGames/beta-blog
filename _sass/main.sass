@@ -156,8 +156,8 @@ body
 			--bubble-padding: 1.5rem 0
 			position: sticky
 			align-self: start // this is needed for position: sticky to work properly in grid
-			top: 2rem
-			margin-top: 2rem
+			top: 1.5rem
+			margin-top: 6.4rem
 			grid-column: full / span 3
 			ul
 				flex-direction: column
@@ -212,9 +212,21 @@ body > main
 	@media (width >= 62.5rem)
 		grid-column: 5 / span 9
 
+section + section
+		margin-top: 1rem
+
 .blog-posts, .blog-post-wrapper
 	display: grid
 	gap: var(--padding)
+	h1
+		font-size: 1.5rem
+		text-transform: uppercase
+		font-weight: 900
+		letter-spacing: 0.04em
+		word-spacing: 0.1em
+		text-align: center
+		color: var(--color-secondary)
+		padding: 1rem 3rem
 
 .blog-post
 	--bubble-padding: 2rem
