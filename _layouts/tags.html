@@ -1,0 +1,41 @@
+---
+layout: default
+---
+
+<section class="blog-posts">
+	<h1>Posts tagged &ldquo;{{ page.title }}&rdquo;</h1>
+	<ul>
+		<!-- prettier-ignore -->
+		{% capture tag %}'{{ page.title }}'{% endcapture %}
+		{% assign filtered_posts = site.posts | where: 'tags', page.title %} {% for
+		post in filtered_posts %}
+		{% include post.html post=post embed=true %} {% endfor %}
+	</ul>
+
+	{% for post in paginator.posts %} {% include post.html post=post embed=true
+	%} {% endfor %}
+	<div class="pagination">
+		{% if paginator.previous_page %}
+		<a href="{{ paginator.previous_page_path }}" class="bubble previous">
+			&lt;
+		</a>
+		{% else %}
+		<span class="bubble previous">&lt;</span>
+		{% endif %} {% for page in (1..paginator.total_pages) %} {% if page ==
+		paginator.page %}
+		<em class="bubble selected">{{ page }}</em>
+		{% elsif page == 1 %}
+		<a class="bubble" href="{{ '/' | relative_url }}">{{ page }}</a>
+		{% else %}
+		<a
+			class="bubble"
+			href="{{ site.paginate_path | relative_url | replace: ':num', page }}"
+			>{{ page }}</a
+		>
+		{% endif %} {% endfor %} {% if paginator.next_page %}
+		<a href="{{ paginator.next_page_path }}" class="bubble next">&gt;</a>
+		{% else %}
+		<span class="bubble next">&gt;</span>
+		{% endif %}
+	</div>
+</section>
