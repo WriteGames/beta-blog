@@ -6,7 +6,7 @@ layout: default
 	<h1>Glossary</h1>
 	<div class="grid">
 		{% for glossary in site.glossary %}
-		<a href="/glossary/{{ glossary.slug }}">
+		<a href="{{ glossary.url }}">
 			<div class="bubble no-padding">
 				<img
 					src="/img/glossary/{{ glossary.slug }}/{{ glossary.banner }}"

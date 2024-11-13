@@ -26,11 +26,11 @@ baseurl: /
 collections:
     author:
         output: true
-    history:
-        output: true
     glossary:
         output: true
         sort_by: name
+    history:
+        output: true
     tag:
         output: true
 
