@@ -108,6 +108,8 @@ a
 
 .bubble
 	border-radius: 0.5rem
+	overflow: hidden
+	font-weight: initial
 	background: var(--color-bubble-bg)
 	color: var(--color-bubble-text)
 	box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2)
@@ -375,6 +377,25 @@ section
 			+ p
 				font-weight: 550
 
+.glossary
+	.grid
+		--bubble-padding: 1rem
+		display: grid
+		gap: 0.5rem
+		grid-template-columns: repeat(3, 1fr)
+		.bubble
+			height: 100%
+		.bubble-padding
+			display: grid
+			gap: 0.5rem
+		img
+			width: 100%
+			aspect-ratio: 16 / 9
+			object-fit: cover
+		h2
+			font-size: 1.25rem
+			font-weight: 550
+
 .history
 	ul
 		display: grid
@@ -390,12 +411,6 @@ section
 		// need this since we're using the gap
 		:is(h1, h2)
 			font-size: 1.5rem
-			// margin-bottom: 0.5rem
-		p:empty
-			display: none
-		// p
-		// 	font-size: 1.25rem
-		// 	line-height: 1.65
 		.info
 			margin-top: 0.25rem
 			font-size: 0.75rem

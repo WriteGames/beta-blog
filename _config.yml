@@ -28,6 +28,9 @@ collections:
         output: true
     history:
         output: true
+    glossary:
+        output: true
+        sort_by: name
     tag:
         output: true
 
@@ -37,6 +40,11 @@ defaults:
           type: 'author'
       values:
           layout: 'author'
+    - scope:
+          path: ''
+          type: 'glossary'
+      values:
+          layout: 'glossary'
     - scope:
           path: ''
           type: 'history'

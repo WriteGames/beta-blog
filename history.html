@@ -12,7 +12,7 @@ layout: default
 				<div class="info">
 					Released {{ history.date | date: site.date_format }}
 				</div>
-				<p>{{ history.content }}</p>
+				{{ history.content }}
 			</li>
 			{% endfor %}
 		</ul>

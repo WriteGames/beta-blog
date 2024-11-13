@@ -1,8 +1,8 @@
 - name: Blog
   link: /
-- name: Tutorials
-  link: /tutorials
-- name: Guides
 - name: Glossary
+  link: /glossary
+- name: Tutorials
+- name: Guides
 - name: About
   link: /about

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<section class="glossary bubble">
+	<div class="item">
+		<a href="/glossary">🡐 Back to Glossary</a>
+		<h1>
+			<a>{{ page.name }}</a>
+		</h1>
+		<div class="info">
+			Published {{ page.date | date: site.date_format }}
+		</div>
+
+		{{ content }}
+	</div>
+</section>
