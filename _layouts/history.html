@@ -4,7 +4,13 @@ layout: default
 
 <section class="history bubble">
 	<div class="item">
-		<h1><a>{{ page.name }}</a></h1>
+		<a href="/history">🡐 Back to History</a>
+		<h1>
+			<a>{{ page.name }}</a>
+		</h1>
+		<div class="info">
+			Released {{ page.date | date: site.date_format }}
+		</div>
 
 		{{ content }}
 	</div>

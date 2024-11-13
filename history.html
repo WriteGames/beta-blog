@@ -9,6 +9,9 @@ layout: default
 			{% for history in site.history reversed %}
 			<li class="item">
 				<h2><a href="{{ history.url }}">{{ history.name }}</a></h2>
+				<div class="info">
+					Released {{ history.date | date: site.date_format }}
+				</div>
 				<p>{{ history.content }}</p>
 			</li>
 			{% endfor %}
