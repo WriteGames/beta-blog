@@ -15,7 +15,11 @@
 <!-- prettier-ignore -->
 {% assign image = 'img/og.png' %}
 {% if page.banner %}
-	{% capture image %}/img/post/{{ page.slug }}/{{ page.banner }}{% endcapture %}
+	{% if page.layout == 'glossary' %}
+		{% capture image %}/img/glossary/{{ page.slug }}/{{ page.banner }}{% endcapture %}
+	{% elsif page.layout == 'post' %}
+		{% capture image %}/img/post/{{ page.slug }}/{{ page.banner }}{% endcapture %}
+	{% endif %}
 {% endif %}
 
 <meta charset="UTF-8" />
