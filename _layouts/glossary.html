@@ -16,7 +16,11 @@ layout: default
 					<a>{{ page.name }}</a>
 				</h1>
 				<div class="info">
-					Published {{ page.date | date: site.date_format }}
+					Published {{ page.date | date: site.date_format }} &bull; By
+					{% assign author = site.author | where: 'short_name',
+					page.author | first %} {% if author %}
+					<a href="{{ author.url }}">{{ author.name }}</a>
+					{% endif %}
 				</div>
 			</header>
 

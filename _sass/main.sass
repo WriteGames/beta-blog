@@ -297,16 +297,36 @@ article
 			text-transform: uppercase
 			line-height: var(--line-height-body)
 			letter-spacing: .01em
+			+ p
+				margin-top: -0.625em
 		h3
 			color: var(--link-color)
 			font-size: 1.25rem
 			font-weight: 100
 			text-transform: uppercase
 			line-height: var(--line-height-body)
+			+ p
+				margin-top: -0.625em
 		p
 			line-height: var(--line-height-body)
 			b
 				font-weight: 550
+		hr
+			display: block
+			margin-block-start: 0.5em
+			margin-block-end: 0.5em
+			unicode-bidi: isolate
+			border-style: inset
+			border-width: 1px
+			margin-block: 1rem
+			height: 0
+			font-size: 0
+			border: 0
+			border-top: 1px dashed var(--color-bubble-text)
+		.twitter-tweet
+			margin-inline: auto
+			border-radius: 12px
+			overflow: hidden
 
 .blog-post
 	--bubble-padding: 2rem
@@ -398,6 +418,13 @@ article
 			margin-left: -0.08ch
 			+ p
 				font-weight: 550
+		.stats
+			font-size: 0.625rem
+			text-transform: uppercase
+		.stats span + span
+			&::before
+				content: '• '
+				margin-inline: 0.25ch
 
 .glossary
 	> img
@@ -408,7 +435,7 @@ article
 		--bubble-padding: 1rem
 		display: grid
 		gap: 0.5rem
-		grid-template-columns: repeat(3, 1fr)
+		grid-template-columns: repeat(2, 1fr)
 		.bubble
 			height: 100%
 		.bubble-padding

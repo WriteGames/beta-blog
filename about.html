@@ -29,7 +29,8 @@ layout: default
 <section class="authors section-with-gap">
 	<h1>Staff</h1>
 	<ul>
-		{% for author in site.author %}
+		{% for author in site.author %} {% assign post_count = site.posts |
+		where: 'author', author.short_name | size %}
 		<li>
 			<a href="{{ author.url }}" class="bubble author-bio">
 				<img
@@ -42,10 +43,11 @@ layout: default
 
 					{{ author.content }}
 
-					<p>
-						{% assign post_count = site.posts | where: 'author',
-						author.short_name | size %} {{ post_count }} Post{%
-						unless post_count == 1 %}s{% endunless %}
+					<p class="stats">
+						<span
+							>{{ post_count }} Post{% unless post_count == 1
+							%}s{% endunless %}</span
+						>
 					</p>
 				</div>
 			</a>
