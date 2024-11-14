@@ -9,7 +9,7 @@ layout: default
 	<article class="bubble">
 		<div class="body">
 			<p>
-				WriteGames.com lorem ipsum dolor sit, amet consectetur
+				<b>WriteGames.com</b> lorem ipsum dolor sit, amet consectetur
 				adipisicing elit. Ut possimus repudiandae impedit dolore omnis
 				soluta voluptatem est fuga quae rerum. Voluptate accusantium,
 				eligendi consequuntur autem debitis nostrum cum perferendis id.
@@ -30,23 +30,25 @@ layout: default
 	<h1>Staff</h1>
 	<ul>
 		{% for author in site.author %}
-		<li class="bubble author-bio">
-			<img
-				src="/img{{ author.url }}.png"
-				alt="{{ author.name }}'s Avatar"
-			/>
-			<div class="body">
-				<h1>{{ author.name }}</h1>
-				<p>{{ author.position }}</p>
+		<li>
+			<a href="{{ author.url }}" class="bubble author-bio">
+				<img
+					src="/img{{ author.url }}.png"
+					alt="{{ author.name }}'s Avatar"
+				/>
+				<div class="body">
+					<h1>{{ author.name }}</h1>
+					<p>{{ author.position }}</p>
 
-				{{ author.content }}
+					{{ author.content }}
 
-				<p>
-					{% assign post_count = site.posts | where: 'author',
-					author.short_name | size %} {{ post_count }} Post{% unless
-					post_count == 1 %}s{% endunless %}
-				</p>
-			</div>
+					<p>
+						{% assign post_count = site.posts | where: 'author',
+						author.short_name | size %} {{ post_count }} Post{%
+						unless post_count == 1 %}s{% endunless %}
+					</p>
+				</div>
+			</a>
 		</li>
 		{% endfor %}
 	</ul>
