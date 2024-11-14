@@ -1,5 +1,4 @@
-{% assign post = include.post %} {% unless include.post %} {% assign post = page
-%} {% endunless %} {% capture button %}{% if post.link %}<a
+{% assign post = page %} {% capture button %}{% if post.link %}<a
 	class="button-link"
 	href="{{ post.link }}"
 	>{% if post.video %}Watch on YouTube{% else %}Direct Link{% endif

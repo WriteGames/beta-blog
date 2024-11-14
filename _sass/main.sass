@@ -253,13 +253,15 @@ section
 	display: grid
 	gap: var(--padding)
 
-.blog-post
-	--bubble-padding: 2rem
-	overflow: hidden
+article
+	--font-size-title: 1.5rem
+	--font-size-body: 1rem
+	--line-height-body: initial
 
 	.bubble-padding
 		display: grid
 		gap: 0.75rem
+		// background: orange
 
 	header
 		.tags
@@ -276,19 +278,26 @@ section
 		:is(h1, h2)
 			margin-left: -0.075ch
 			font-weight: 700
-			font-size: 2rem
+			font-size: var(--font-size-title)
 			line-height: 1.25
 		.info
 			margin-top: 0.25rem
 			font-size: 0.75rem
 			line-height: 1em
 			font-weight: 300
+
 	.body
 		display: grid
 		gap: 0.5rem
-		font-size: 1.25rem
+		font-size: var(--font-size-body)
 		p
-			line-height: 1.65
+			line-height: var(--line-height-body)
+
+.blog-post
+	--bubble-padding: 2rem
+	--font-size-title: 2rem
+	--font-size-body: 1.25rem
+	--line-height-body: 1.65
 	&:not(.preview)
 		footer
 			margin-top: 1rem
@@ -396,26 +405,16 @@ section
 			font-size: 1.25rem
 			font-weight: 550
 
-.history
+.history, .glossary
 	ul
 		display: grid
 		gap: 1rem
 		li
 			list-style-type: none
-			+ li
-				border-top: 1px dashed var(--color-bubble-text)
-				padding-top: 1rem
-	.item
-		display: grid
-		gap: 0.5rem
-		// need this since we're using the gap
-		:is(h1, h2)
-			font-size: 1.5rem
-		.info
-			margin-top: 0.25rem
-			font-size: 0.75rem
-			line-height: 1em
-			font-weight: 300
+
+.history
+	--font-size-title: 1.5rem
+	--font-size-body: 1rem
 
 body
 	> footer

@@ -1,0 +1,16 @@
+{% assign history = page %}
+<article class="bubble history item no-padding">
+	<div class="bubble-padding">
+		{% unless include.embed %}<a href="/history">🡐 Back to History</a>{%
+		endunless %}
+		<header>
+			<h2>
+				<a href="{{ history.url }}">{{ history.name }}</a>
+			</h2>
+			<div class="info">
+				Released {{ history.date | date: site.date_format }}
+			</div>
+		</header>
+		<div class="body">{{ history.content }}</div>
+	</div>
+</article>

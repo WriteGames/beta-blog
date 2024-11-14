@@ -4,17 +4,11 @@ layout: default
 
 <section class="history section-with-gap">
 	<h1>History</h1>
-	<div class="bubble">
+	<section>
 		<ul>
 			{% for history in site.history reversed %}
-			<li class="item">
-				<h2><a href="{{ history.url }}">{{ history.name }}</a></h2>
-				<div class="info">
-					Released {{ history.date | date: site.date_format }}
-				</div>
-				{{ history.content }}
-			</li>
+			<li>{% include history.html embed=true %}</li>
 			{% endfor %}
 		</ul>
-	</div>
+	</section>
 </section>
