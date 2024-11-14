@@ -2,18 +2,25 @@
 layout: default
 ---
 
-<article class="glossary bubble">
-	<div class="item">
-		<a href="/glossary">🡐 Back to Glossary</a>
-		<header>
-			<h1>
-				<a>{{ page.name }}</a>
-			</h1>
-			<div class="info">
-				Published {{ page.date | date: site.date_format }}
-			</div>
-		</header>
+<section>
+	<article class="glossary bubble no-padding">
+		<img
+			src="/img/glossary/{{ page.slug }}/{{ page.banner }}"
+			alt=""
+			width="100%"
+		/>
+		<div class="bubble-padding">
+			<a href="/glossary">🡐 Back to Glossary</a>
+			<header>
+				<h1>
+					<a>{{ page.name }}</a>
+				</h1>
+				<div class="info">
+					Published {{ page.date | date: site.date_format }}
+				</div>
+			</header>
 
-		{{ content }}
-	</div>
-</article>
+			<div class="body">{{ page.content }}</div>
+		</div>
+	</article>
+</section>
