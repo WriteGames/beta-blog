@@ -24,7 +24,24 @@ layout: default
 				</div>
 			</header>
 
-			<div class="body">{{ page.content }}</div>
+			<div class="body">
+				<!-- TODO: make sure we have multiline support -->
+				{% for p in page.definition %} {{ p | markdownify }} {% endfor
+				%}
+
+				<h2>What it solves</h2>
+
+				{% for p in page.solves %} {{ p | markdownify }} {% endfor %}
+
+				<hr />
+
+				{{ page.content }}
+
+				<hr />
+
+				<h2>Other Names</h2>
+				{{ page.other_names | join: ", " }}
+			</div>
 		</div>
 	</article>
 </section>

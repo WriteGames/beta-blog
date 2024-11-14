@@ -45,6 +45,7 @@ defaults:
           type: 'glossary'
       values:
           layout: 'glossary'
+          banner_position: 50% 50%
     - scope:
           path: ''
           type: 'history'
