@@ -25,16 +25,6 @@ layout: default
 			</header>
 
 			<div class="body">
-				<!-- TODO: make sure we have multiline support -->
-				{% for p in page.definition %} {{ p | markdownify }} {% endfor
-				%}
-
-				<h2>What it solves</h2>
-
-				{% for p in page.solves %} {{ p | markdownify }} {% endfor %}
-
-				<hr />
-
 				{{ page.content }}
 
 				<hr />

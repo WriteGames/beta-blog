@@ -5,15 +5,19 @@ date: 2023-11-18 12:00:00
 banner: coyote-time.jpg
 banner_position: 50% 20%
 summary: Allow jumping for a short window after falling off a ledge
-definition:
-    - 'A brief window after falling off a ledge where the player can still jump. In some cases, the player may also be able to walk back onto the ledge (see: [corner correction](corner-correction)).'
-solves:
-    - 'During difficult platforming sections, players can benefit from having more generous time windows, both from "coyote time" and [input buffering](input-buffering), to ensure being a frame or two off doesn''t cost them a life.'
 other_names:
     - ghost jump
     - phantom jumping
     - ledge forgiveness
 ---
+
+A brief window after falling off a ledge where the player can still jump. In some cases, the player may also be able to walk back onto the ledge (see: [corner correction](corner-correction)).
+
+## What it solves
+
+During difficult platforming sections, players can benefit from having more generous time windows, both from "coyote time" and [input buffering](input-buffering), to ensure being a frame or two off doesn''t cost them a life.
+
+<hr />
 
 ## Examples
 
