@@ -1,5 +1,5 @@
 {% assign history = page %}
-<article class="bubble history item no-padding">
+<article class="bubble history no-padding">
 	<div class="bubble-padding">
 		{% unless include.embed %}<a href="/history">🡐 Back to History</a>{%
 		endunless %}
@@ -11,6 +11,11 @@
 				Released {{ history.date | date: site.date_format }}
 			</div>
 		</header>
-		<div class="body">{{ history.content }}</div>
+		<div class="body">
+			{% if include.embed and history.content.size > history.excerpt.size
+			%} {{ button }} {{ history.excerpt }}
+			<p><a href="{{ history.url }}">Read More</a></p>
+			{% else %} {{ history.content }} {% endif %}
+		</div>
 	</div>
 </article>

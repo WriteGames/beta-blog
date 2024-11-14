@@ -41,9 +41,10 @@
 			</div>
 		</header>
 		<div class="body">
-			{% if include.embed %} {{ button }} {{ post.excerpt }}
+			{% if include.embed and post.content.size > post.excerpt.size %} {{
+			button }} {{ post.excerpt }}
 			<p><a href="{{ post.url }}">Read More</a></p>
-			{% else %} {{ content }} {{ button }} {% endif %}
+			{% else %} {{ post.content }} {{ button }} {% endif %}
 		</div>
 		<footer>
 			<div class="author">
