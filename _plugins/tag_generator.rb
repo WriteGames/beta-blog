@@ -1,4 +1,9 @@
 Jekyll::Hooks.register :posts, :post_write do |post|
+	# ensure the directory is the root
+	Dir.chdir(File.dirname(__FILE__) + "/..")
+	
+	Dir.mkdir("_tag") unless Dir.exist?("_tag")
+	
 	all_existing_tags = Dir.entries("_tag")
 	.map { |t| t.match(/(.*).md/) }
 	.compact.map { |m| m[1] }
