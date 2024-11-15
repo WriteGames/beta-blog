@@ -60,6 +60,9 @@ body
 		--color-bubble-bg: var(--color-bubble-bg-dark)
 		--color-bubble-text: var(--color-bubble-text-dark)
 
+	@media (width < 32rem)
+		--padding: 0.5rem
+
 body
 	> header
 		margin-top: calc(var(--page-border-height) + 3rem)
@@ -332,6 +335,8 @@ article
 
 .blog-post
 	--bubble-padding: 2rem
+	@media (max-width: 32rem)
+		--bubble-padding: 1rem
 	&:not(.preview)
 		footer
 			margin-top: 1rem
@@ -429,6 +434,8 @@ article
 				margin-inline: 0.25ch
 
 .glossary
+	@media (max-width: 32rem)
+		--bubble-padding: 1.25rem
 	> img
 		width: 100%
 		aspect-ratio: 16 / 6
